@@ -1,5 +1,6 @@
 <script setup>
     import { ref, reactive } from 'vue'
+    
     const countries = reactive([
         { name: "Bangladesh", capital: "Dhaka" },
         { name: "Bhutan", capital: "Thimpu" },
@@ -18,7 +19,7 @@
                         })
                     })
                 } else {
-                    data.filter(c=>c.name.common.startsWith(list)).forEach(country => {
+                    data.filter(c => c.name.common.startsWith(list)).forEach(country => {
                         countries.push({
                             name: country.name.common,
                             capital: country.capital[0]
@@ -48,7 +49,18 @@
                 </button>
             </div>
             <div class="col-md-12">
-                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Country</th>
+                            <th>Capital</th>
+                        </tr>
+                        <tr v-for="country in countries" :key="country.name">
+                            <td>{{ country.name }}</td>
+                            <td>{{ country.capital }}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
