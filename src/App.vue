@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="mt-3 text-center">Country List</h2>
+                <h3 class="mt-3 text-center">Country List</h3>
                 <div class="d-flex justify-content-center mb-3">
                     <button class="btn btn-primary btn-sm m-1" @click="getAllCountries()">
                         List of Countries
